@@ -46,13 +46,17 @@ while True:
 
     elif choice == 5:
         view_books.view_books()
-        book_id = input('Enter ISBN number of the book you want to lend:')
+        book_id = int(input('Enter ISBN number of the book you want to lend: '))
         lend_book.lend_book(books,book_id)
 
+
+
     elif choice == 6:
-        view_books.view_books()
-        book_id = input('Enter ISBN number of the book you want to return:')
-        return_book.return_book(books,book_id)
+        view_books.view_books()  # Show the list of books
+        book_id = int(input('Enter ISBN number of the book you want to return: '))  # Convert to int
+        borrower_name = input('Enter the name of the borrower: ')
+        return_book.return_book(books, book_id, borrower_name)
+
 
     elif choice == 0:
         print("\nThanks for using Library Management System.")

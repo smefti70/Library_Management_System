@@ -1,4 +1,4 @@
+import json
 def save_books(book_list):
-    with open("books.csv", "w") as f:
-        for book in book_list:
-            f.write(f"{book['title']},{book['author']},{book['isbn']},{book['year']},{book['price']},{book['quantity']}\n")
+    with open("books.json", "w") as file:
+        json.dump(book_list,file,indent=4)
